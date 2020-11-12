@@ -6,6 +6,7 @@ import {HomePage} from './home.page';
 
 import {HomePageRoutingModule} from './home-routing.module';
 import {Camera} from '@ionic-native/camera/ngx';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import {Camera} from '@ionic-native/camera/ngx';
         HomePageRoutingModule,
     ],
     declarations: [HomePage],
-    providers: [Camera]
+    providers: [Camera, SocialSharing]
 })
 export class HomePageModule {
 }

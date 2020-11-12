@@ -12,6 +12,7 @@ import {ContacService} from '../services/contac-services.service';
 export class ContactFormComponent implements OnInit {
 
     contact: Contact;
+    loading: boolean = false;
 
     constructor(private modalController: ModalController, private camera: Camera,
                 private toast: ToastController, private service: ContacService) {
@@ -40,9 +41,12 @@ export class ContactFormComponent implements OnInit {
         }, async (err) => {
             await this.showToast('Ha ocurrido un error', 1000);
         });
+
     }
 
     async saveContact() {
+        this.setLoading(true);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         await this.service.addContact(this.contact);
         this.close();
     }
@@ -53,5 +57,9 @@ export class ContactFormComponent implements OnInit {
             duration: time
         });
         await toast.present();
+    }
+
+    setLoading(state: boolean) {
+        this.loading = state;
     }
 }

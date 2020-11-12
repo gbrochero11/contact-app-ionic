@@ -1,3 +1,4 @@
+<ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
@@ -27,7 +28,7 @@
                 </ion-item>
 
                 <ion-item>
-                    <ion-label position="floating">Telefono</ion-label>
+                    <ion-label position="floating">Tel&eacute;fono</ion-label>
                     <ion-input [(ngModel)]="contact.phone" type="number" required name="phone"
                                #phone="ngModel"></ion-input>
                 </ion-item>

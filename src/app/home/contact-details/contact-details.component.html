@@ -1,3 +1,4 @@
+<ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
@@ -15,6 +16,21 @@
             <ion-card-header>
                 <ion-card-title>{{contact.name}}</ion-card-title>
                 <ion-card-title>{{contact.phone}}</ion-card-title>
+
+                <ion-buttons>
+                    <ion-button (click)="shareFacebook()">
+                        <ion-icon name="logo-facebook" slot="start"></ion-icon>
+                    </ion-button>
+                    <ion-button>
+                        <ion-button (click)="shareInstagram()">
+                            <ion-icon name="logo-instagram" slot="start"></ion-icon>
+                        </ion-button>
+                    </ion-button>
+                    <ion-button (click)="shareWhatsapp()">
+                        <ion-icon name="logo-whatsapp" slot="end"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+
             </ion-card-header>
         </ion-card>
     </ion-content>
