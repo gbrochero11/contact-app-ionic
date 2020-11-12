@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="close()">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>Crear contacto</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header color="light" (click)="openCamera()">
+            <img [src]="contact.image" class="img-viewer">
+
+        </ion-card-header>
+        <form #form="ngForm" (ngSubmit)="saveContact()">
+
+            <ion-card-content>
+                <ion-item>
+                    <ion-label position="floating">Nombre</ion-label>
+                    <ion-input [(ngModel)]="contact.name" type="text" required name="name" #name="ngModel"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label position="floating">Telefono</ion-label>
+                    <ion-input [(ngModel)]="contact.phone" type="number" required name="phone"
+                               #phone="ngModel"></ion-input>
+                </ion-item>
+
+            </ion-card-content>
+            <ion-button expand="full" fill="solid" color="primary" type="submit" [disabled]="form.invalid">Guardar
+            </ion-button>
+        </form>
+
+    </ion-card>
+
+
+</ion-content>
